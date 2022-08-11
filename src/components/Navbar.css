@@ -1,0 +1,32 @@
+.container{
+    background-color: #0f172a;
+    width: 100%;
+    color: #e2e8f0;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+}
+.container-section{
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+
+}
+.cart-cred{
+    font-size: 2rem;
+}
+.cart-cred span{
+    border: 2px solid red;
+    font-size: 1rem;
+    padding: 0.2rem;
+    color: red;
+    border-radius: 20px;
+    margin-top: -10px;
+    position: fixed;
+    font-weight: bolder;
+
+}
