@@ -4,6 +4,9 @@ import Banner from './components/Banner'
 import Products from './components/Products';
 import CartOrder from './components/Cart/CartOrder';
 import CartProvider from './Store/CartProvider';
+import {Route} from 'react-router-dom';
+import AboutUs from './Pages/AboutUs'
+
 function App() {
   const [cartItem, showCartItem] = useState(false)
 
@@ -19,7 +22,12 @@ function App() {
       {cartItem && <CartOrder onHideCart={hideCartHandler}/>  }
       <Navbar onShowCart={showCartHandler}/>
       <Banner/>
+      <Route path='/about'>
+        <AboutUs/>
+      </Route>
+      <Route path='/store'>
       <Products/>
+      </Route>
     </CartProvider>
   );
 }

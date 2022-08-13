@@ -30,3 +30,11 @@
     font-weight: bolder;
 
 }
+.links {
+    color: #e2e8f0;
+    text-decoration: none;
+}
+.links:hover, .active{
+    color: #94a3b8;
+    border-bottom: 2px solid #94a3b8;
+}
