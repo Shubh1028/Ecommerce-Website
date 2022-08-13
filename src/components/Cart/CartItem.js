@@ -10,7 +10,7 @@ const CartItem = (props) => {
         <div>{props.title}</div>
         <div>{props.price}</div>
         <div>{props.quantity}</div>
-        <div><AiOutlineClose/></div>
+        <div onClick={props.onRemove}><AiOutlineClose/></div>
         {/* <h2>{props.title}</h2>
         <div className={classes.summary}>
           <span className={classes.price}>{price}</span>

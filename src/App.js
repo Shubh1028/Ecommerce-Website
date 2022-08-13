@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Banner from './components/Banner'
 import Products from './components/Products';
 import CartOrder from './components/Cart/CartOrder';
+import CartProvider from './Store/CartProvider';
 function App() {
   const [cartItem, showCartItem] = useState(false)
 
@@ -14,12 +15,12 @@ function App() {
     showCartItem(false);
   }
   return (
-    <Fragment>
+    <CartProvider>
       {cartItem && <CartOrder onHideCart={hideCartHandler}/>  }
       <Navbar onShowCart={showCartHandler}/>
       <Banner/>
       <Products/>
-    </Fragment>
+    </CartProvider>
   );
 }
 

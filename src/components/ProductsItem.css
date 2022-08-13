@@ -36,5 +36,11 @@
     color: #e2e8f0;
     padding: 0.5rem;
     border-radius: 10px;
+    cursor: pointer;
 }
+.price-btn button:hover{
+    background-color: #1e293b;
+    border-color: #1e293b;
+    color: white;
+  }
 
