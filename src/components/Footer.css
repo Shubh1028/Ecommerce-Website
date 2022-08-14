@@ -1,0 +1,14 @@
+.footer {
+    display: flex;
+    position: sticky;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0f172a;
+    margin-bottom: -10%;
+    margin-top: 8.15rem;
+    padding: 0.5em 0 0.5em 0;
+    color: #e2e8f0;
+}
+span.icon {
+    font-size: 1.05em;
+}

@@ -6,6 +6,8 @@ import CartOrder from './components/Cart/CartOrder';
 import CartProvider from './Store/CartProvider';
 import {Route} from 'react-router-dom';
 import AboutUs from './Pages/AboutUs'
+import Home from './Pages/Home';
+import Footer from './components/Footer';
 
 function App() {
   const [cartItem, showCartItem] = useState(false)
@@ -22,12 +24,14 @@ function App() {
       {cartItem && <CartOrder onHideCart={hideCartHandler}/>  }
       <Navbar onShowCart={showCartHandler}/>
       <Banner/>
+      <Route path='/home' component={Home}/>
       <Route path='/about'>
         <AboutUs/>
       </Route>
       <Route path='/store'>
       <Products/>
       </Route>
+      <Footer/>
     </CartProvider>
   );
 }
