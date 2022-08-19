@@ -7,6 +7,7 @@ import CartProvider from './Store/CartProvider';
 import {Route} from 'react-router-dom';
 import AboutUs from './Pages/AboutUs'
 import Home from './Pages/Home';
+import ContactUs from './Pages/ContactUs';
 import Footer from './components/Footer';
 
 function App() {
@@ -25,6 +26,10 @@ function App() {
       <Navbar onShowCart={showCartHandler}/>
       <Banner/>
       <Route path='/home' component={Home}/>
+      <Route path='/contact'>
+        <ContactUs/>
+      </Route>
+      
       <Route path='/about'>
         <AboutUs/>
       </Route>
