@@ -4,11 +4,13 @@ import Banner from './components/Banner'
 import Products from './components/Products';
 import CartOrder from './components/Cart/CartOrder';
 import CartProvider from './Store/CartProvider';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import AboutUs from './Pages/AboutUs'
+import ProductDetail from './Pages/ProductDetail';
 import Home from './Pages/Home';
 import ContactUs from './Pages/ContactUs';
 import Footer from './components/Footer';
+
 
 function App() {
   const [cartItem, showCartItem] = useState(false)
@@ -25,6 +27,7 @@ function App() {
       {cartItem && <CartOrder onHideCart={hideCartHandler}/>  }
       <Navbar onShowCart={showCartHandler}/>
       <Banner/>
+      <Switch>
       <Route path='/home' component={Home}/>
       <Route path='/contact'>
         <ContactUs/>
@@ -33,9 +36,13 @@ function App() {
       <Route path='/about'>
         <AboutUs/>
       </Route>
-      <Route path='/store'>
+      <Route path='/store' exact>
       <Products/>
       </Route>
+      <Route path='/store/:productID'>
+        <ProductDetail/>
+      </Route>
+      </Switch>
       <Footer/>
     </CartProvider>
   );

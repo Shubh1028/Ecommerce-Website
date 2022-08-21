@@ -1,4 +1,5 @@
 import React, {Fragment, useContext} from 'react';
+import {Link} from 'react-router-dom'
 import './ProductsItem.css'
 import CartContext from '../Store/cart-context'
 
@@ -17,7 +18,7 @@ const ProductItems = (props) => {
         <Fragment>
             <div className='product-item'>
             <div className='title'>{props.title}</div>
-            <img alt={props.title} src={props.image}/>
+            <Link to={`/store/${props.id}`}><img alt={props.title} src={props.image}/></Link>
             <div className='price-btn'>
                 <div>$ {props.price}</div>
                 <button onClick={addToCartHandler}>Add To Cart</button>
