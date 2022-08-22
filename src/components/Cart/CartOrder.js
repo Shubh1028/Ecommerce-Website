@@ -1,59 +1,49 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Modal from '../UI/Modal';
 import classes from './CartOrder.module.css';
 import CartItem from './CartItem';
 import CartContext from '../../Store/cart-context'
-const cartElements = [
 
-    {
-    
-    title: 'Colors',
-    
-    price: 100,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-    
-    quantity: 1,
-    
-    },
-    
-    {
-    
-    title: 'Black and white Colors',
-    
-    price: 50,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-    
-    quantity: 1,
-    
-    },
-    
-    {
-    
-    title: 'Yellow and Black Colors',
-    
-    price: 70,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-    
-    quantity: 1,
-    
-    }
-    
-    ]
-    
     
 
 const CartOrder = (props) => {
 
   const ctx = useContext(CartContext)
-  console.log(ctx.items)
+  // const [productItems, setItems] = useState([]);
+  // const cartProducts = []
+
+
+  // let username = localStorage.getItem("email");
+  // let t = "";
+  // for (let i = 0; i < username.length; i++) {
+  //   if (username[i] === '.' || username[i] === '@') {
+  //     continue;
+  //   }
+  //   else {
+  //     t += username[i];
+  //   }
+  // }
+  // username = t;
+
+
+  // useEffect(() => {
+  //   fetch(`https://shubh-s-ecommerce-default-rtdb.firebaseio.com/ecommerce/cart/${username}.json`)
+  //   .then(data => {
+  //     return data.json();
+  //     })
+  //     .then(post => {
+  //     let newArr = Object.entries(post)
+  //     for(let i =0; i<newArr.length; i++) {
+  //       cartProducts.push(newArr[i][1]) 
+  //     }
+  //     setItems([...cartProducts])
+  //      }
+  //     )
+  // }, []);
 
   const removeHandler = (id) => {
     ctx.removeItem(id);
   }
-
 
   // console.log(ctx.items)
 
@@ -85,5 +75,4 @@ const CartOrder = (props) => {
     </Modal>
   );
 };
-
 export default CartOrder;

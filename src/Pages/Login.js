@@ -26,7 +26,8 @@ const Login = () => {
           })
           .then( res => {
             if(res.ok) {
-              res.json().then(data => {authCtx.login(data.idToken)})
+                localStorage.setItem('email', enteredEmail)
+              res.json().then(data => {authCtx.login(data.idToken); console.log(data)})
     
             } else {
               return res.json().then(data => {
