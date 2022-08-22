@@ -10,6 +10,7 @@ import ProductDetail from './Pages/ProductDetail';
 import Home from './Pages/Home';
 import ContactUs from './Pages/ContactUs';
 import Footer from './components/Footer';
+import Login from './Pages/Login';
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
       <Route path='/home' component={Home}/>
       <Route path='/contact'>
         <ContactUs/>
+      </Route>
+      <Route path='/login'>
+        <Login/>
       </Route>
       
       <Route path='/about'>
