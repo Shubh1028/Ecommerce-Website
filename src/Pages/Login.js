@@ -1,10 +1,12 @@
 import React, {useContext, useRef} from 'react'
+import { useHistory } from 'react-router-dom';
 import "./ContactUs.css";
 import AuthContext from '../Store/auth-context';
 
 const Login = () => {
     const fetchEmailRef = useRef();
     const fetchPasswordRef = useRef();
+    const history = useHistory();
 
      const authCtx = useContext(AuthContext)
 
@@ -27,7 +29,10 @@ const Login = () => {
           .then( res => {
             if(res.ok) {
                 localStorage.setItem('email', enteredEmail)
-              res.json().then(data => {authCtx.login(data.idToken); console.log(data)})
+              res.json().then(data => {authCtx.login(data.idToken)
+              history.replace('./home')}
+              
+              )
     
             } else {
               return res.json().then(data => {
@@ -51,6 +56,11 @@ const Login = () => {
         <input type='password' id='password' placeholder="Enter Your Password" ref={fetchPasswordRef}/>
     </div>
     <button type='submit'>Submit</button>
+    <div className='dummy-box'>
+    <h3>Dummy Credentials</h3>
+    <p>Email: <span>shubh410shekhar@gmail.com</span></p>
+    <p>Password: <span>test123</span></p>
+    </div>
    </form>
   );
 };
